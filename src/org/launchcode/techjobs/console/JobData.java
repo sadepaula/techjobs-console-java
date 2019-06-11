@@ -76,7 +76,7 @@ public class JobData {
 
             String aValue = row.get(column);
 
-            if (aValue.contains(value)) {
+            if (aValue.toLowerCase().contains(value.toLowerCase())) {
                 jobs.add(row);
             }
         }
@@ -92,11 +92,12 @@ public class JobData {
             for (String matchKeyword : row.keySet()){
                 //create lower case here
                 String keywordLowercase = keyword.toLowerCase();
+                //System.out.println(keywordLowercase);
 
                 String duplicate = row.get(matchKeyword);
+                //System.out.println(duplicate);
 
-
-                if (duplicate.toLowerCase().contains(keywordLowercase)) {
+                if (duplicate.toLowerCase().contains(keyword.toLowerCase())) {
                     jobs.add(row);
                     break ;
                 }

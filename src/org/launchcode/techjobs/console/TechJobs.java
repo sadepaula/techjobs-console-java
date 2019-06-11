@@ -119,7 +119,7 @@ public class TechJobs {
             System.out.println("*****");
             for (int i = 0; i < someJobs.size(); i++) {
                 for (Map.Entry<String, String> labels : someJobs.get(i).entrySet()) {
-                    System.out.println(labels.getKey() + " :" + labels.getValue());
+                    System.out.println(labels.getKey() + ": " + labels.getValue());
 
                 }
             System.out.println(("******"));}
