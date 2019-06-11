@@ -97,7 +97,6 @@ public class JobData {
 
 
                 if (duplicate.toLowerCase().contains(keywordLowercase)) {
-                    // how to not get duplicates ???check for equal
                     jobs.add(row);
                     break ;
                 }
