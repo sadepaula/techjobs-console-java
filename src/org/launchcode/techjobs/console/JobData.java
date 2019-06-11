@@ -84,6 +84,27 @@ public class JobData {
         return jobs;
     }
 
+    public static ArrayList<HashMap<String, String>> findByValue (String keyword) {
+        loadData();
+
+        ArrayList<HashMap<String, String>> jobs = new ArrayList<> () ;
+        for (HashMap<String,String> row : allJobs){
+            for (String matchKeyword : row.keySet()){
+                //create lower case here
+                String keywordLowercase = keyword.toLowerCase();
+
+                String duplicate = row.get(matchKeyword);
+
+
+                if (duplicate.toLowerCase().contains(keywordLowercase)) {
+                    // how to not get duplicates ???check for equal
+                    jobs.add(row);
+                    break ;
+                }
+
+            }
+        }
+        return jobs; }
     /**
      * Read in data from a CSV file and store it in a list
      */
